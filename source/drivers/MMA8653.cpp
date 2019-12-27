@@ -212,7 +212,17 @@ void MMA8653::idleTick()
  */
 int MMA8653::isDetected(MicroBitI2C &i2c, uint16_t address)
 {
-    return i2c.readRegister(address, MMA8653_WHOAMI) == MMA8653_WHOAMI_VAL;
+    int val = i2c.readRegister(address, MMA8653_WHOAMI);
+
+    if (val == MMA8653_WHOAMI_VAL || val == MMA8652_WHOAMI_VAL)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+    
 }
 
 /**

@@ -59,6 +59,7 @@ DEALINGS IN THE SOFTWARE.
 /**
   * MMA8653 constants
   */
+#define MMA8652_WHOAMI_VAL      0x4A
 #define MMA8653_WHOAMI_VAL      0x5A
 
 /**
